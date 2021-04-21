@@ -2,7 +2,7 @@
 [Dd]ebug/
 [Rr]elease/
 x64/
-[Bb]in/
+bin/
 
 
-\src\temporary
+src\temporary	
