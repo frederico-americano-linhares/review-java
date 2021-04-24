@@ -15,6 +15,7 @@ public class Classification {
 				String line = myReader.nextLine();
 
 				System.out.println(line);
+
 				addImageToKeyword(line,kd);
 			}
 			myReader.close();
@@ -22,6 +23,7 @@ public class Classification {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+		System.out.println("");
 	}
 
 	public static void addImageToKeyword(String line, KeywordDatabase kd) {

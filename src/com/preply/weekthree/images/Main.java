@@ -8,8 +8,11 @@ public class Main {
 		KeywordDatabase kd = new KeywordDatabase();
 		Classification.read(kd);
 		kd.print();
-		
-
-	}
+		kd.findImages("animals");
+		System.out.println();
+		kd.findOrImages("animals","people");
+		System.out.println();
+		kd.findAndImages("animals","people");
+}
 
 }
