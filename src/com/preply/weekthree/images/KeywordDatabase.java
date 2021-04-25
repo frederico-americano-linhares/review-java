@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class KeywordDatabase {
 
@@ -52,7 +50,7 @@ public class KeywordDatabase {
 			}
 		});
 
-		System.out.println(result);
+		generateResponse(result);
 
 	}
 
@@ -68,31 +66,40 @@ public class KeywordDatabase {
 			}
 		});
 
-		System.out.println(result);
+		generateResponse(result);
 
 	}
 
-	public void findAndImages(String keyword1, String keyword2) {
+	private void generateResponse(Set<String> result) {
+		if (result.isEmpty()) {
+			System.out.println("Your search returned no results.");	
+		}
+		else {
+		System.out.println(result);
+		}
+	}
 
-		Set<String> result1 = new HashSet<String>();
-		Set<String> result2 = new HashSet<String>();
+	public void findAndImages(String keywordA, String keywordB) {
+
+		Set<String> resultA = new HashSet<String>();
+		Set<String> resultB = new HashSet<String>();
 
 		this.keywords.entrySet().forEach(entry -> {
-			if (entry.getKey().equalsIgnoreCase(keyword1)) {
-				result1.addAll(entry.getValue());
+			if (entry.getKey().equalsIgnoreCase(keywordA)) {
+				resultA.addAll(entry.getValue());
 			}
 		});
 		
 
 		this.keywords.entrySet().forEach(entry -> {
-			if (entry.getKey().equalsIgnoreCase(keyword2)) {
-				result2.addAll(entry.getValue());
+			if (entry.getKey().equalsIgnoreCase(keywordB)) {
+				resultB.addAll(entry.getValue());
 			}
 		});
 		
-		result1.retainAll(result2);
+		resultA.retainAll(resultB);
 		
-		System.out.println(result1);
+		generateResponse(resultA);
 
 
 	}

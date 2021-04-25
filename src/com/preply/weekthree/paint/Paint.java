@@ -26,7 +26,7 @@ public class Paint {
 
 	}
 
-	static void print2(HashMap<String, Integer> map) {
+	static void print(HashMap<String, Integer> map) {
 
 		for (Map.Entry<String, Integer> set : map.entrySet()) {
 
@@ -51,7 +51,7 @@ public class Paint {
 			}
 
 		}
-		print2(result);
+		print(result);
 		System.out.println(mostSpaceColor + " has the most spaces to color!" );
 	}
 
