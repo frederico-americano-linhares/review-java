@@ -74,7 +74,7 @@ public class Database {
 		ArrayList<String> result = new ArrayList<String>();
 
 		this.facultyMap.entrySet().forEach(entry -> {
-			if (entry.getKey().equalsIgnoreCase(department)) {
+			if (entry.getKey().equals(department)) {
 				result.addAll(entry.getValue());
 			}
 		});
@@ -89,7 +89,9 @@ public class Database {
 			System.out.println("Your search returned no results.");	
 		}
 		else {
-		System.out.println(result);
+			for (String element : result) {
+			    System.out.println(element);
+			}
 		}
 	}
 
