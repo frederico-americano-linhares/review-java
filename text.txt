@@ -1,0 +1,31 @@
+Searching in Files (Grep)
+(Background) Command-Line Grep
+The UNIX command grep is an extremely powerful and useful tool. You can use grep to search a file for a given pattern, and report where that pattern appears in the file, as follows:
+
+grep -n <pattern> <file>
+The -n is an optional parameter that tells grep that we want it to report line numbers. It prints out each line of text next to the line number. This is but one of many, many grep features, which are fully documented on its man page (which you can access, if you want to learn more, by typing ‘man grep’ into a terminal)
+
+Write a class Grep with a constructor and a single method, lookup. Your constructor should take as input a filename and perform any necessary preprocessing. The lookup method should take as input a word and return a set of the line numbers on which that word appears in the file. It should operate in expected constant time.
+
+As noted above, you can (and should) make use of Java’s built-in hash table data structure, which is called HashMap, to solve this problem.
+
+Notes:
+If the same word appears more than once on the same line, you should include the line number only once in your output.
+You should treat words as sequences of characters separated by whitespace; so “glitter” and “glitter!” are distinct words. Also, you can assume words are case sensitive; so “mystery” and “Mystery” are distinct words.
+
+Hints:
+As part of the preprocessing step, you may want to use the split method in the String class, which splits up a string into pieces each time it encounters a specific character, and stores those pieces in an array of strings.
+
+Also you may need to catch and handle relevant exceptions. Think about exceptions like FileNotFoundException and/or IOException.
+
+The Java syntax to declare a HashMap that maps, for example, from a String to a Set of type Integer is new HashMap<String, Set<Integer>>(). Likewise, the syntax to declare a HashSet of Integers is new HashSet<Integer>().
+
+Task: Write a main method for the Grep class. The String[] args should correspond to a file name, and then at least 1 other word to look for, in that order.
+String sentence = "This is a sentence."
+String[] words = sentence.split(" ")
+
+Note: To take in arguments using IntelliJ, press the dropdown menu near the green “run” button and select edit configurations. In the “Program Arguments” field, put your program arguments (space separated). These arguments will appear in the String[] args variable in your main method.
+
+Note: We are only testing lookup here, not the main Grep program, because the latter simply prints output to the traveller was found on lines: [1] on was found on lines: [3, 7, 9, 11] screen. In such cases, you test the inner logic, then manually inspect output build from the results of the inner logic. That is, you only need to test your lookup function, not the Grep constructor.
+
+Please do not be afraid to create your own text files for testing, especially to try to catch edge cases!

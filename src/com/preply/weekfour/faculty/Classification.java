@@ -1,4 +1,4 @@
-package com.preply.weekfour;
+package com.preply.weekfour.faculty;
 
 import java.io.File;
 import java.io.FileNotFoundException;

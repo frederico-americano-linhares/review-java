@@ -1,4 +1,4 @@
-package com.preply.weekfour;
+package com.preply.weekfour.faculty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,6 +52,7 @@ public class Database {
 		
 
 		this.facultyMap.computeIfAbsent(department, k -> new ArrayList<String>()).add(person);
+        System.out.println("OK, added " + person);
 
 	}
 	
@@ -62,7 +63,9 @@ public class Database {
 		if (!people.isEmpty() && people.contains(person)) {
 			
 			people.remove(person);
+			this.facultyMap.remove(department);
 			this.facultyMap.computeIfAbsent(department, k -> new ArrayList<String>()).addAll(people);
+	        System.out.println("OK, removed " + person + " from " + department);
 		}
 		
 
